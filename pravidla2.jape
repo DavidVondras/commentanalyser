@@ -1,0 +1,20 @@
+Phase:firstpass
+Input:  Lookup  
+Options: control = brill
+
+Rule: Positive
+(
+{Lookup.majorType == "positive-word"}
+): label
+-->
+:label.Positive = {rule= "Positive" } 
+
+Rule: Negative
+Priority: 80
+(
+{Lookup.majorType == "negative-word"}
+): label
+-->
+:label.Negative = {rule= "Negative" } 
+
+
